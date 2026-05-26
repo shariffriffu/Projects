@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "719421251164",
+    "project_id": "rehbar-d722f",
+    "storage_bucket": "rehbar-d722f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719421251164:android:44a45c4f9dacb797e79099",
+        "android_client_info": {
+          "package_name": "com.example.rehbar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJyN9m6wnkCTeF622IAUKIke9I_fMhm2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,144 @@
+import 'package:untitled1/USSDResponsePage.dart';
+import 'package:untitled1/menu/WithoutPrivilageDealerMenu.dart';
+import 'package:untitled1/ussd.dart';
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+
+void main() => runApp(const ChangePassword());
+
+class ChangePassword extends StatelessWidget {
+  const ChangePassword({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    const appTitle = 'Change Password';
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: appTitle,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(appTitle),
+          leading: BackButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const WithoutPrivilageDealerMenu()),
+              );
+            },
+            color: Colors.white,
+          ),
+        ),
+        body: const MyCustomForm(),
+      ),
+    );
+  }
+}
+
+class MyCustomForm extends StatelessWidget {
+  // ignore: use_key_in_widget_constructors
+  const MyCustomForm({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final newPasswordController = TextEditingController();
+    final oldPasswordController = TextEditingController();
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            const SizedBox(height: 16),
+            TextField(
+              controller: newPasswordController,
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'New Password',
+              ),
+            ),
+            const SizedBox(height: 16),
+            TextField(
+              controller: oldPasswordController,
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Old Password',
+              ),
+            ),
+            const SizedBox(height: 32),
+            ElevatedButton(
+              child: const Text('Submit'),
+              onPressed: () async {
+                final password = oldPasswordController.text;
+                if (password.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Please fill all the fields'),
+                      backgroundColor: Colors.red,
+                    ),
+                  );
+                  return;
+                }
+
+                showDialog(
+                  context: context,
+                  barrierDismissible:
+                      false, // prevent the user from dismissing the dialog
+                  builder: (BuildContext context) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  },
+                );
+
+                // Construct the USSD request string
+                final prefs = await SharedPreferences.getInstance();
+                              final username = prefs.getString('username') ?? '';
+
+                final servicecode = prefs.getString('Service code') ?? '';
+                final ussdCode =
+                    '*$servicecode*7*0*27*$password*0*0*0*2*860882068612183*$username#';
+                print('USSD Code: $ussdCode');
+                final response = await sendUssdRequest(ussdCode);
+                print('USSD Response: $response');
+
+                // Show the response message to the user
+                 // ignore: use_build_context_synchronously
+                showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: const Text('USSD Response'),
+              content: Text(response),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    // Close the USSD response dialog
+                    Navigator.of(context).pop();
+                    Navigator.of(context).pop();
+                    
+                  },
+                  child: const Text('OK'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    // Navigate to the USSD response page with the response
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => USSDResponsePage(response: response),
+                      ),
+                    );
+                  },
+                  child: const Text('Save and Print'),
+                ),
+              ]);
+                  },
+                );
+              },
+            ),
+          ]),
+    );
+  }
+}

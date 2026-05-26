@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+import 'theme.dart';
+import 'pages/splash_screen.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'S S Decoration',
+      debugShowCheckedModeBanner: false,
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      themeMode: ThemeMode.system,
+      home: const SafeArea(
+        child: SplashScreen(),
+      ),
+    );
+  }
+}
