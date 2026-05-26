@@ -1,0 +1,77 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:json_annotation/json_annotation.dart';
+import 'package:serve_dynamic_ui/src/dynamic_widgets/dynamic_widget.dart';
+import 'package:serve_dynamic_ui/src/utils/index.dart';
+
+part 'dy_sized_box.g.dart';
+
+///[DynamicSizedBox] : A dynamic widget that creates fixed sized box based on given [width] and [height].
+@JsonSerializable(
+  explicitToJson: true,
+  createToJson: false,
+)
+class DynamicSizedBox extends DynamicWidget {
+  @JsonKey(fromJson: Util.generateRandomString)
+  String key;
+  @JsonKey(fromJson: WidgetUtil.getHeightValueOrInf)
+  double? height;
+  @JsonKey(fromJson: WidgetUtil.getWidthValueOrInf)
+  double? width;
+  DynamicWidget? child;
+
+  DynamicSizedBox({
+    required this.key,
+    this.height,
+    this.width,
+    this.child,
+  }) : super(
+          key: key,
+        );
+
+  factory DynamicSizedBox.fromJson(Map<String, dynamic> json) =>
+      _$DynamicSizedBoxFromJson(json);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: height != null
+          ? ((height! < 0) ? MediaQuery.of(context).size.height : height)
+          : null,
+      width: width != null
+          ? ((width! < 0) ? MediaQuery.of(context).size.width : width)
+          : null,
+      child: child != null
+          ? LayoutBuilder(builder: (context, _) {
+              return child!.build(
+                context,
+              );
+            })
+          : null,
+    );
+  }
+
+  @override
+  List<DynamicWidget>? get childWidgets => child == null ? [] : [child!];
+
+  @override
+  FutureOr invokeMethod(String methodName, {Map<String, dynamic>? params}) {}
+
+  @override
+  void postBuild() {}
+
+  @override
+  void preBuild() {}
+
+  @override
+  void onDispose() {
+    WidgetUtil.callOnDisposeOnWidget(child);
+  }
+
+  @override
+  double? get dyHeight => height;
+
+  @override
+  double? get dyWidth => width;
+}

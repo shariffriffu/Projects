@@ -34,3 +34,6 @@ yarn-error.log*
 **/*.ipr
 **/*.iws
 **/.vscode/
+
+# Exclude cached Gradle zips
+**/wrapper/dists/

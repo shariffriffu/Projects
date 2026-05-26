@@ -1,0 +1,408 @@
+{
+    "type": "scaffold",
+    "args": {
+      "body": {
+        "type": "column",
+        "args": {
+          "children": [
+            {
+              "type": "expanded",
+              "args": {
+                "child": {
+                  "type": "stack",
+                  "args": {
+                    "children": [
+                      {
+                        "type": "container",
+                        "args": {
+                          "color": "#D6D6D6",
+                          "height": "infinity",
+                          "width": "infinity"
+                        }
+                      },
+                      {
+                        "type": "preferred_size",
+                        "args": {
+                          "preferredSize": 400,
+                          "child": {
+                            "type": "asset_image",
+                            "args": {
+                              "name": "assets/images/bt/appbar.png",
+                              "height": 250,
+                              "width": "infinity",
+                              "fit": "fill"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "positioned",
+                        "args": {
+                          "top": 80,
+                          "left": 10,
+                          "right": 10,
+                          "child": {
+                            "type": "list_tile",
+                            "args": {
+                              "title": {
+                                "type": "center",
+                                "args": {
+                                  "child": {
+                                    "type": "text",
+                                    "args": {
+                                      "text": "Transaction History",
+                                      "style": {
+                                        "color": "#D6D6D6",
+                                        "fontWeight": "bold",
+                                        "fontSize": 18
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "leading": {
+                                "type": "icon_button",
+                                "args": {
+                                  "icon": {
+                                    "type": "icon",
+                                    "args": {
+                                      "color": "#D6D6D6",
+                                      "icon": {
+                                        "codePoint": "0xe092",
+                                        "fontFamily": "MaterialIcons",
+                                        "size": 150
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "trailing": {
+                                "type": "icon_button",
+                                "args": {
+                                  "icon": {
+                                    "type": "icon",
+                                    "args": {
+                                      "color": "#D6D6D6",
+                                      "icon": {
+                                        "codePoint": "0xe309",
+                                        "fontFamily": "MaterialIcons",
+                                        "size": 150
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "positioned",
+                        "args": {
+                          "top": 160,
+                          "left": 0,
+                          "right": 0,
+                          "bottom": 300,
+                          "child": {
+                            "type": "single_child_scroll_view",
+                            "args": {
+                              "child": {
+                                "type": "container",
+                                "args": {
+                                  "color": "#D6D6D6",
+                                  "padding": {
+                                    "top": 20,
+                                    "left": 20,
+                                    "right": 10
+                                  },
+                                  "child": {
+                                    "type": "row",
+                                    "args": {
+                                      "children": [
+                                        {
+                                          "type": "container",
+                                          "args": {
+                                            "child": {
+                                              "type": "column",
+                                              "args": {
+                                                "crossAxisAlignment": "start",
+                                                "children": [
+                                                  {
+                                                    "type": "row",
+                                                    "args": {
+                                                      "children": [
+                                                        {
+                                                          "type": "sized_box",
+                                                          "args": {
+                                                            "width": 20
+                                                          }
+                                                        },
+                                                        {
+                                                          "type": "text",
+                                                          "args": {
+                                                            "text": "From",
+                                                            "style": {
+                                                              "color": "#000000",
+                                                              "fontWeight": "bold"
+                                                            }
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  {
+                                                    "type": "card",
+                                                    "args": {
+                                                      "elevation": 5,
+                                                      "shadowColor": "#000000",
+                                                      "color": "#FFFFFF",
+                                                      "decoration": {
+                                                        "borderRadius": 8.0
+                                                      },
+                                                      "child": {
+                                                        "type": "container",
+                                                        "args": {
+                                                          "width": 140,
+                                                          "height": 50,
+                                                          "child": {
+                                                            "type": "row",
+                                                            "args": {
+                                                              "children": [
+                                                                {
+                                                                  "type": "sized_box",
+                                                                  "args": {
+                                                                    "width": 5
+                                                                  }
+                                                                },
+                                                                {
+                                                                  "type": "asset_image",
+                                                                  "args": {
+                                                                    "name": "assets/images/bt/calender.png",
+                                                                    "height": 30,
+                                                                    "width": 25,
+                                                                    "fit": "fill"
+                                                                  }
+                                                                },
+                                                                {
+                                                                  "type": "sized_box",
+                                                                  "args": {
+                                                                    "width": 8
+                                                                  }
+                                                                },
+                                                                {
+                                                                  "type": "expanded",
+                                                                  "args": {
+                                                                    "child": {
+                                                                      "type": "container",
+                                                                      "args": {
+                                                                        "child": {
+                                                                          "type": "text_form_field",
+                                                                          "args": {
+                                                                            "readOnly": true,
+                                                                            "onTap": "${selectFromDate()}",
+                                                                            "controller": "${fromDateController}",
+                                                                            "decoration": {
+                                                                              "border": "${border}"
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "type": "sized_box",
+                                          "args": {
+                                            "width": 16
+                                          }
+                                        },
+                                        {
+                                          "type": "container",
+                                          "args": {
+                                            "child": {
+                                              "type": "column",
+                                              "args": {
+                                                "crossAxisAlignment": "start",
+                                                "children": [
+                                                  {
+                                                    "type": "row",
+                                                    "args": {
+                                                      "children": [
+                                                        {
+                                                          "type": "sized_box",
+                                                          "args": {
+                                                            "width": 20
+                                                          }
+                                                        },
+                                                        {
+                                                          "type": "text",
+                                                          "args": {
+                                                            "text": "To",
+                                                            "style": {
+                                                              "color": "#000000",
+                                                              "fontWeight": "bold"
+                                                            }
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  {
+                                                    "type": "card",
+                                                    "args": {
+                                                      "elevation": 5,
+                                                      "shadowColor": "#000000",
+                                                      "color": "#FFFFFF",
+                                                      "decoration": {
+                                                        "borderRadius": 8.0
+                                                      },
+                                                      "child": {
+                                                        "type": "container",
+                                                        "args": {
+                                                          "width": 140,
+                                                          "height": 50,
+                                                          "child": {
+                                                            "type": "row",
+                                                            "args": {
+                                                              "children": [
+                                                                {
+                                                                  "type": "sized_box",
+                                                                  "args": {
+                                                                    "width": 5
+                                                                  }
+                                                                },
+                                                                {
+                                                                  "type": "asset_image",
+                                                                  "args": {
+                                                                    "name": "assets/images/bt/calender.png",
+                                                                    "height": 30,
+                                                                    "width": 25,
+                                                                    "fit": "fill"
+                                                                  }
+                                                                },
+                                                                {
+                                                                  "type": "sized_box",
+                                                                  "args": {
+                                                                    "width": 8
+                                                                  }
+                                                                },
+                                                                {
+                                                                  "type": "expanded",
+                                                                  "args": {
+                                                                    "child": {
+                                                                      "type": "container",
+                                                                      "args": {
+                                                                        "child": {
+                                                                          "type": "text_form_field",
+                                                                          "args": {
+                                                                            "readOnly": true,
+                                                                            "onTap": "${selectToDate()}",
+                                                                            "controller": "${toDateController}",
+                                                                            "decoration": {
+                                                                              "border": "${border}"
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "positioned",
+                        "args": {
+                          "top": 300,
+                          "left": 100,
+                          "right": 100,
+                          "child": {
+                            "type": "card",
+                            "args": {
+                              "elevation": 5,
+                              "shadowColor": "#000000",
+                              "height": 60,
+                              "width": 200,
+                              "decoration": {
+                                "borderRadius": 28.0
+                              },
+                              "child": {
+                                "type": "sized_box",
+                                "args": {
+                                  "height": 40,
+                                  "width": 100,
+                                  "child": {
+                                    "type": "elevated_button",
+                                    "args": {
+                                      "onPressed": "${print()}",
+                                      "style": {
+                                        "backgroundColor": "#1C3144",
+                                        "shape": {
+                                          "type": "rectangle",
+                                          "args": {
+                                            "borderRadius": 16
+                                          }
+                                        }
+                                      },
+                                      "child": {
+                                        "type": "text",
+                                        "args": {
+                                          "text": "Go",
+                                          "style": {
+                                            "color": "#D6D6D6",
+                                            "fontWeight": "bold",
+                                            "fontSize": 20
+                                          }
+                                        }
+                                      },
+                                      "width": 200,
+                                      "height": 50
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+  

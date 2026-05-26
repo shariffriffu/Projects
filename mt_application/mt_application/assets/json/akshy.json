@@ -1,0 +1,366 @@
+{
+    "type": "scaffold",
+    "args": {
+        "body": {
+            "type": "stack",
+            "args": {
+                "children": [
+                    {
+                        "type": "container",
+                        "args": {
+                            "color": "#FFFFFF",
+                            "height": "infinity",
+                            "width": "infinity"
+                        }
+                    },
+                    {
+                        "type": "preferred_size",
+                        "args": {
+                            "preferredSize": "${preferred_size}",
+                            "child": {
+                                "type": "asset_image",
+                                "args": {
+                                    "name": "lib/assets/backgrnd.png",
+                                    "height": 200,
+                                    "width": "infinity",
+                                    "fit": "fill"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "type": "positioned",
+                        "args": {
+                            "top": 50,
+                            "left": 5,
+                            "right": 5,
+                            "bottom": 0,
+                            "child": {
+                                "type":"column",
+                                "args":{
+                                    "children":[
+                                        {
+                                            "type": "list_tile",
+                                            "args": {
+                                                "title": {
+                                                    "type": "center",
+                                                    "args": {
+                                                        "child": {
+                                                            "type": "text",
+                                                            "args": {
+                                                                "text": "B - Tunes",
+                                                                "style": {
+                                                                    "color": "#FFFFFF",
+                                                                    "fontWeight": "bold",
+                                                                    "fontSize": 25
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "leading": {
+                                                    "type": "icon_button",
+                                                    "args": {
+                                                        "icon": {
+                                                            "type": "icon",
+                                                            "args": {
+                                                                "color": "#FFFFFF",
+                                                                "icon": {
+                                                                    "codePoint": "0xe092",
+                                                                    "fontFamily": "MaterialIcons"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "trailing": {
+                                                    "type": "icon_button",
+                                                    "args": {
+                                                        "icon": {
+                                                            "type": "icon",
+                                                            "args": {
+                                                                "color": "#FFFFFF",
+                                                                "icon": {
+                                                                    "codePoint": "0xe309",
+                                                                    "fontFamily": "MaterialIcons",
+                                                                    "size": 100
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type":"sized_box",
+                                            "args":{
+                                                "height":20
+                                            }
+                                        },
+                                        {
+                                            "type":"single_child_scroll_view",
+                                            "args":{
+                                                "child":{
+                                                    "type": "sized_box",
+                                                    "args": {
+                                                        "height": "622",
+                                                        "child": {
+                                                            "type": "card",
+                                                            "args": {
+                                                                "elevation": 40,
+                                                                "shadowColor": "#c6c6c6",
+                                                                "color": "#eeeeee",
+                                                                "child": {
+                                                                    "type": "column",
+                                                                    "args": {
+                                                                        "crossAxisAlignment": "start",
+                                                                        "children": [
+                                                                            {
+                                                                                "type": "padding",
+                                                                                "args": {
+                                                                                    "padding": {
+                                                                                        "top": 10,
+                                                                                        "left": 0,
+                                                                                        "right": 0
+                                                                                    },
+                                                                                    "child": {
+                                                                                        "type": "column",
+                                                                                        "args": {
+                                                                                            "mainAxisSize": "min",
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "type": "sized_box",
+                                                                                                    "args": {
+                                                                                                        "height": 20
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "row",
+                                                                                                    "args": {
+                                                                                                        "children": [
+                                                                                                            {
+                                                                                                                "type": "sized_box",
+                                                                                                                "args": {
+                                                                                                                    "width": 10
+                                                                                                                }
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "type": "text",
+                                                                                                                "args": {
+                                                                                                                    "text": "Subscribe to B-Tunes",
+                                                                                                                    "style": {
+                                                                                                                        "color": "#000000",
+                                                                                                                        "fontSize": 14,
+                                                                                                                        "fontWeight": "bold"
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "type": "sized_box",
+                                                                                                                "args": {
+                                                                                                                    "width": 20
+                                                                                                                }
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "type": "cupertino_switch",
+                                                                                                                "args": {
+                                                                                                                    "label": "Checked",
+                                                                                                                    "value": true
+                                                                                                                }
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "sized_box",
+                                                                                                    "args": {
+                                                                                                        "height": 8
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "container",
+                                                                                                    "args": {
+                                                                                                        "padding": [
+                                                                                                            10,
+                                                                                                            0,
+                                                                                                            10,
+                                                                                                            0
+                                                                                                        ],
+                                                                                                        "decoration": {
+                                                                                                            "borderRadius": {
+                                                                                                                "type": "all",
+                                                                                                                "radius": 15
+                                                                                                            },
+                                                                                                            "color": "#FFFFFF"
+                                                                                                        },
+                                                                                                        "width": "MediaQuery.of(context).size.width",
+                                                                                                        "height": 35,
+                                                                                                        "child": {
+                                                                                                            "type": "text_form_field",
+                                                                                                            "id": "SearchData",
+                                                                                                            "args": {
+                                                                                                                "keyboardType": "text",
+                                                                                                                "obscureText": true,
+                                                                                                                "decoration": {
+                                                                                                                    "border": "${textFieldDecoration}",
+                                                                                                                    "labelText": "Search",
+                                                                                                                    "labelStyle": {
+                                                                                                                        "color": "#000000",
+                                                                                                                        "fontSize": 18
+                                                                                                                    },
+                                                                                                                    "hintStyle": {
+                                                                                                                        "color": "#5FBB49",
+                                                                                                                        "fontSize": 16
+                                                                                                                    },
+                                                                                                                    "suffixIcon": {
+                                                                                                                        "type": "icon_button",
+                                                                                                                        "args": {
+                                                                                                                            "icon": {
+                                                                                                                                "type": "icon",
+                                                                                                                                "args": {
+                                                                                                                                    "icon": {
+                                                                                                                                        "codePoint": "0xf34b",
+                                                                                                                                        "fontFamily": "MaterialIcons",
+                                                                                                                                        "size": 50
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                            },
+                                                                                                                            "onPressed": "${set_value('ObscureText', '!ObscureText')}"
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "container",
+                                                                                                    "args": {
+                                                                                                        "height": 50,
+                                                                                                        "width": "MediaQuery.of(context).size.width",
+                                                                                                        "child": {
+                                                                                                            "type": "tab_bar",
+                                                                                                            "args": {
+                                                                                                                "controller": "${tabBarController}",
+                                                                                                                "tabs": [
+                                                                                                                    {
+                                                                                                                        "type": "tab",
+                                                                                                                        "args": {
+                                                                                                                            "text": "Top Tunes"
+                                                                                                                        }
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "type": "tab",
+                                                                                                                        "args": {
+                                                                                                                            "text": "Latest Tunes"
+                                                                                                                        }
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "type": "tab",
+                                                                                                                        "args": {
+                                                                                                                            "text": "My Tunes"
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "container",
+                                                                                                    "args": {
+                                                                                                        "height": 200,
+                                                                                                        "width": "MediaQuery.of(context).size.width",
+                                                                                                        "child": {
+                                                                                                            "type": "expanded",
+                                                                                                            "args": {
+                                                                                                                "color": "#000000",
+                                                                                                                "child": {
+                                                                                                                    "type": "tab_bar_view",
+                                                                                                                    "args": {
+                                                                                                                        "controller": "${tabBarController}",
+                                                                                                                        "children": [
+                                                                                                                            {
+                                                                                                                                "type": "single_child_scroll_view",
+                                                                                                                                "args": {
+                                                                                                                                    "child": {
+                                                                                                                                        "type": "center",
+                                                                                                                                        "args": {
+                                                                                                                                            "child": {
+                                                                                                                                                "type": "row",
+                                                                                                                                                "args": {
+                                                                                                                                                    "children": [
+                                                                                                                                                        {
+                                                                                                                                                            "type": "container",
+                                                                                                                                                            "args": {
+                                                                                                                                                                "height": 25,
+                                                                                                                                                                "width": 200,
+                                                                                                                                                                "color": "#5FBB49",
+                                                                                                                                                                "child": {
+                                                                                                                                                                    "type": "text",
+                                                                                                                                                                    "args": {
+                                                                                                                                                                        "text": "tune1"
+                                                                                                                                                                    }
+                                                                                                                                                                }
+                                                                                                                                                            }
+                                                                                                                                                        }
+                                                                                                                                                    ]
+                                                                                                                                                }
+                                                                                                                                            }
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "type": "center",
+                                                                                                                                "args": {
+                                                                                                                                    "child": {
+                                                                                                                                        "type": "text",
+                                                                                                                                        "args": {
+                                                                                                                                            "text": "Latest Tunes"
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "type": "center",
+                                                                                                                                "args": {
+                                                                                                                                    "child": {
+                                                                                                                                        "type": "text",
+                                                                                                                                        "args": {
+                                                                                                                                            "text": "My Tunes"
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

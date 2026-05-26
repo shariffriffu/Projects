@@ -1,0 +1,21 @@
+{
+  "type": "dy_scaffold",
+  "data": {
+    "key": "123456",
+    "appBar": {
+      "pageTitle": "Flutter Container Screen"
+    },
+    "children": [
+      {
+        "type": "dy_container",
+        "data": {
+          "key": "123123",
+          "height": 100,
+          "width": 200,
+          "backgroundColor": "0xffff0000",
+          "margin": "10"
+        }
+      }
+    ]
+  }
+}

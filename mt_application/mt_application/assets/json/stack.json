@@ -1,0 +1,215 @@
+{
+    "type": "scaffold",
+    "args": {
+        "appBar": {
+            "type": "app_bar",
+            "args": {
+                "title": {
+                    "type": "text",
+                    "args": {
+                        "text": "Sign Up",
+                        "style": {
+                            "color": "#000000",
+                            "fontWeight": "bold"
+                        }
+                    }
+                },
+                "backgroundColor": "#1569C7"
+            }
+        },
+        "body": {
+            "type": "single_child_scroll_view",
+            "args": {
+                "child": {
+                    "type": "column",
+                    "args": {
+                        "children": [
+                            {
+                                "type": "gesture_detector",
+                                "args": {
+                                    "onTap": "${image()}",
+                                    "child": {
+                                        "type": "network_image",
+                                        "args": {
+                                            "src": "http://10.0.1.165/mtimages.gif"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "type": "sized_box",
+                                "args": {
+                                    "height": 20
+                                }
+                            },
+                            {
+                                "type": "container",
+                                "args": {
+                                    "padding": [
+                                        20,
+                                        20,
+                                        20,
+                                        20
+                                    ],
+                                    "child": {
+                                        "type": "safe_area",
+                                        "args": {
+                                            "child": {
+                                                "type": "form",
+                                                "args": {
+                                                    "child": {
+                                                        "type": "column",
+                                                        "args": {
+                                                            "crossAxisAlignment": "center",
+                                                            "mainAxisAlignment": "center",
+                                                            "children": [
+                                                                {
+                                                                    "type": "row",
+                                                                    "args": {
+                                                                        "children": [
+                                                                            {
+                                                                                "type": "network_image",
+                                                                                "args": {
+                                                                                    "height": 30,
+                                                                                    "width": 30,
+                                                                                    "src": "http://10.0.1.165/Prefix_mobile.png"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "type": "sized_box",
+                                                                                "args": {
+                                                                                    "width": 10
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "type": "expanded",
+                                                                                "args": {
+                                                                                    "child": {
+                                                                                        "type": "stack",
+                                                                                        "args": {
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "type": "text_form_field",
+                                                                                                    "id": "password",
+                                                                                                    "args": {
+                                                                                                        "keyboardType": "number",
+                                                                                                        "obscureText": "true",
+                                                                                                        "decoration": {
+                                                                                                            "labelText": "Enter your PIN",
+                                                                                                            "labelStyle": {
+                                                                                                                "color": "#1569C7",
+                                                                                                                "fontWeight": "bold",
+                                                                                                                "fontSize": 15
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "positioned",
+                                                                                                    "args": {
+                                                                                                        "right": 0,
+                                                                                                        "bottom": 10,
+                                                                                                        "child": {
+                                                                                                            "type": "row",
+                                                                                                            "args": {
+                                                                                                                "mainAxisSize": "min",
+                                                                                                                "children": [
+                                                                                                                    {
+                                                                                                                        "type": "network_image",
+                                                                                                                        "args": {
+                                                                                                                            "height": 30,
+                                                                                                                            "width": 30,
+                                                                                                                            "src": "http://10.0.1.165/eyeon.png"
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "sized_box",
+                                                                    "args": {
+                                                                        "height": 40
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "elevated_button",
+                                                                    "args": {
+                                                                        "child": {
+                                                                            "type": "text",
+                                                                            "args": {
+                                                                                "text": "Login",
+                                                                                "style": {
+                                                                                    "color": "#FFFFFF"
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "style": {
+                                                                            "backgroundColor": "#1569C7"
+                                                                        },
+                                                                        "onPressed": "${pin('form_context')}"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "sized_box",
+                                                                    "args": {
+                                                                        "height": 30
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "text",
+                                                                    "args": {
+                                                                        "text": "------------or------------",
+                                                                        "style": {
+                                                                            "color": "#000000",
+                                                                            "fontWeight": "bold"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "sized_box",
+                                                                    "args": {
+                                                                        "height": 30
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "gesture_detector",
+                                                                    "args": {
+                                                                        "onTap": "${fingerFunction()}",
+                                                                        "child": {
+                                                                            "type": "icon",
+                                                                            "args": {
+                                                                                "icon": {
+                                                                                    "codePoint": "0xe287",
+                                                                                    "fontFamily": "MaterialIcons"
+                                                                                },
+                                                                                "size": 44
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

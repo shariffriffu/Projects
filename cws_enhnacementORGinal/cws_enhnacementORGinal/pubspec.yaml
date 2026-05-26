@@ -1,0 +1,247 @@
+name: untitled1
+description: A new Flutter project.
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+  shared_preferences: ^2.2.2
+  ussd_service: ^0.1.1
+  sim_data: ^0.0.2
+  permission_handler: ^11.1.0
+  html_unescape: ^2.0.0
+  http: ^1.1.2
+  flutter_tts: ^3.8.5
+  progress_dialog_null_safe: ^1.0.7
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.8  
+  animated_splash_screen: ^1.3.0
+  custom_refresh_indicator: ^3.0.0
+  local_auth: ^2.1.7
+  json_dynamic_widget: ^7.0.6
+  flutter_js: ^0.8.0
+  image_picker: ^1.0.5
+  fluttertoast: ^8.2.4
+  audioplayers: ^5.2.1
+  qr_code_scanner: ^1.0.1
+  webview_flutter: ^4.4.4
+  syncfusion_flutter_charts: ^24.2.9
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+    
+flutter_native_splash:
+  color: "#42a5f5"
+  android: true
+  ios: true
+
+
+flutter_icons:
+  image_path: "assets/logo.png"
+  android: true
+  ios: true
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+
+    - assets/Zero.wav
+    - assets/One.wav
+    - assets/Two.wav
+    - assets/Three.wav
+    - assets/Four.wav
+    - assets/Five.wav
+    - assets/Six.wav
+    - assets/Seven.wav
+    - assets/Eight.wav
+    - assets/Nine.wav
+    - assets/Ten.wav
+    - assets/Eleven.wav
+    - assets/Twelve.wav
+    - assets/Thirteen.wav
+    - assets/Fourteen.wav
+    - assets/Fifteen.wav
+    - assets/Sixteen.wav
+    - assets/Seventeen.wav
+    - assets/Eighteen.wav
+    - assets/Nineteen.wav
+    - assets/Twenty.wav
+    - assets/Thirty.wav
+    - assets/Forty.wav
+    - assets/Fifty.wav
+    - assets/Sixty.wav
+    - assets/Seventy.wav
+    - assets/Eighty.wav
+    - assets/Ninety.wav
+    - assets/thousand.wav
+    - assets/hundred.wav
+    - assets/BalanceOrRechargeMenu.wav
+    - assets/Recharge_for_the_ mob.wav
+    - assets/Transfertomobile.wav
+    - assets/WIth_an_amount.wav
+    - assets/Rupies.wav
+    - assets/20.wav
+    - assets/21.wav
+    - assets/22.wav
+    - assets/23.wav
+    - assets/24.wav
+    - assets/25.wav
+    - assets/26.wav
+    - assets/27.wav
+    - assets/28.wav
+    - assets/29.wav
+    - assets/30.wav
+    - assets/31.wav
+    - assets/32.wav
+    - assets/33.wav
+    - assets/34.wav
+    - assets/35.wav
+    - assets/36.wav
+    - assets/37.wav
+    - assets/38.wav
+    - assets/39.wav
+    - assets/40.wav
+    - assets/41.wav
+    - assets/42.wav
+    - assets/43.wav
+    - assets/44.wav
+    - assets/45.wav
+    - assets/46.wav
+    - assets/47.wav
+    - assets/48.wav
+    - assets/49.wav
+    - assets/50.wav
+    - assets/51.wav
+    - assets/52.wav
+    - assets/53.wav
+    - assets/54.wav
+    - assets/55.wav
+    - assets/56.wav
+    - assets/57.wav
+    - assets/58.wav
+    - assets/59.wav
+    - assets/60.wav
+    - assets/61.wav
+    - assets/62.wav
+    - assets/63.wav
+    - assets/64.wav
+    - assets/65.wav
+    - assets/66.wav
+    - assets/67.wav
+    - assets/68.wav
+    - assets/69.wav
+    - assets/70.wav
+    - assets/71.wav
+    - assets/72.wav
+    - assets/73.wav
+    - assets/74.wav
+    - assets/75.wav
+    - assets/76.wav
+    - assets/77.wav
+    - assets/78.wav
+    - assets/79.wav
+    - assets/80.wav
+    - assets/81.wav
+    - assets/82.wav
+    - assets/83.wav
+    - assets/84.wav
+    - assets/85.wav
+    - assets/86.wav
+    - assets/87.wav
+    - assets/88.wav
+    - assets/89.wav
+    - assets/90.wav
+    - assets/91.wav
+    - assets/92.wav
+    - assets/93.wav
+    - assets/94.wav
+    - assets/95.wav
+    - assets/96.wav
+    - assets/97.wav
+    - assets/98.wav
+    - assets/99.wav
+    - assets/please_enter.mp3
+  
+
+
+
+
+
+
+  #   - images/a_dot_burr.jpeg
+  #   - images/a_dot_ham.jpeg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
