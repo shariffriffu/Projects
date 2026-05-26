@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.visiontek.cloudpos_selfdiag">
+
+
+
+    <!-- HDMI-CLOUDPOS_CLONESCREEN -->
+    <uses-permission android:name="android.permission.CLOUDPOS_CLONESCREEN" />
+    <!--D3 ADAPTER-->
+    <uses-permission android:name="android.permission.CLOUDPOS_PRINTER_ADAPTER" />
+    <!-- CLOUDPOS_PRINTER -->
+    <uses-permission android:name="android.permission.CLOUDPOS_PRINTER" />
+    <!-- MSR -->
+    <uses-permission android:name="android.permission.CLOUDPOS_MSR"/>
+    <!-- Contactless card-->
+    <uses-permission android:name="android.permission.CLOUDPOS_CONTACTLESS_CARD"/>
+    <!-- SmartCard-->
+    <uses-permission android:name="android.permission.CLOUDPOS_SMARTCARD"/>
+    <!-- Serial port -->
+    <uses-permission android:name="android.permission.CLOUDPOS_SERIAL" />
+    <!-- LED -->
+    <uses-permission android:name="android.permission.CLOUDPOS_LED" />
+
+    <!-- CLOUDPOS_CUSTOMER_DISPLAY -->
+    <uses-permission android:name="android.permission.CLOUDPOS_CUSTOMER_DISPLAY" />
+
+    <!-- Pinpad -->
+    <uses-permission android:name="android.permission.CLOUDPOS_PIN_GET_PIN_BLOCK"/>
+    <uses-permission android:name="android.permission.CLOUDPOS_PIN_MAC" />
+    <uses-permission android:name="android.permission.CLOUDPOS_PIN_ENCRYPT_DATA"/>
+    <uses-permission android:name="android.permission.CLOUDPOS_PIN_UPDATE_USER_KEY"/>
+    <uses-permission android:name="android.permission.CLOUDPOS_PIN_UPDATE_MASTER_KEY"/>
+
+    <!-- Chinese ID -->
+    <uses-permission android:name="android.permission.CLOUDPOS_IDCard"/>
+    <!-- ACCESS_NETWORK_STATE -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- INTERNET -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- CLOUDPOS_MONEYBOX -->
+    <uses-permission android:name="android.permission.CLOUDPOS_MONEYBOX"/>
+    <!-- CLOUDPOS_FINGERPRINT -->
+    <uses-permission android:name="android.permission.CLOUDPOS_FINGERPRINT"/>
+    <!--CLOUDPOS_SIGNATURE-->
+    <uses-permission android:name="android.permission.CLOUDPOS_SIGNATURE"/>
+    <!--CLOUDPOS_SAFE_MODULE-->
+    <uses-permission android:name="android.permission.CLOUDPOS_SAFE_MODULE" />
+    <!--SYSTEM_ALERT_WINDOW-->
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+
+
+    <uses-permission android:name="android.permission.WRITE_OWNER_DATA" />
+    <uses-permission android:name="android.permission.READ_OWNER_DATA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CLOUDPOS_FINGERPRINT" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-feature android:name="android.hardware.usb.host" />
+    <permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_OWNER_DATA" />
+    <uses-permission android:name="android.permission.READ_OWNER_DATA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature android:name="android.hardware.bluetooth" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Visiontek Q2 Selfdiag_v1.2"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="com.visiontek.cloudpos_selfdiag.SmartCard"
+            android:launchMode="singleInstance"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.visiontek.cloudpos_selfdiag.Printer"
+            android:launchMode="singleInstance"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.visiontek.cloudpos_selfdiag.Msr"
+            android:launchMode="singleInstance"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.visiontek.cloudpos_selfdiag.Rfid"
+            android:launchMode="singleInstance"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name="com.visiontek.cloudpos_selfdiag.GIF"
+            android:hardwareAccelerated="false"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.visiontek.cloudpos_selfdiag.Flash"
+            android:launchMode="singleInstance"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.visiontek.cloudpos_selfdiag.GPRS"
+            android:launchMode="singleInstance"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.visiontek.cloudpos_selfdiag.GPS"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.visiontek.cloudpos_selfdiag.Bluetooth"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.visiontek.cloudpos_selfdiag.Test"
+            android:launchMode="singleInstance"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.visiontek.cloudpos_selfdiag.LCD"
+            android:launchMode="singleInstance"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.visiontek.cloudpos_selfdiag.Audio"
+            android:launchMode="singleInstance"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.visiontek.cloudpos_selfdiag.IFD"
+            android:launchMode="singleInstance"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.visiontek.cloudpos_selfdiag.SampleActivity"
+            android:launchMode="singleInstance"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.visiontek.cloudpos_selfdiag.FPDisplay"
+            android:launchMode="singleInstance"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.visiontek.cloudpos_selfdiag.PSAM"
+            android:launchMode="singleInstance"
+            tools:ignore="Instantiatable" />
+
+        <activity android:name="com.visiontek.cloudpos_selfdiag.MainActivity">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+            <meta-data android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" android:resource="@xml/device_filter" />
+
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout01" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content">
+    
+    <RelativeLayout 
+    android:id="@+id/RelativeLayout02" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content">
+    
+	    <LinearLayout
+	    android:id="@+id/EnrollmentLeftLayout" 
+	    android:orientation="vertical"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    >
+
+
+
+
+	    
+	    <Button 
+	        android:text="Enroll"
+	        android:id="@+id/ButtonLeftLittle" 
+	        android:layout_width="fill_parent" 
+	        android:layout_height="wrap_content"
+	    />
+
+			<Button
+				android:text="identify"
+				android:id="@+id/ButtonVerifyAll"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				/>
+	    </LinearLayout>
+	         
+	    <LinearLayout 
+	    android:orientation="vertical"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    >
+			<Button
+				android:text="delete_all"
+				android:id="@+id/ButtonDeleteAll"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				/>
+			<Button
+				android:text="grab"
+				android:id="@+id/ButtonGrab"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				/>
+	    </LinearLayout>
+	    
+	    <LinearLayout 
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        >
+
+	    <Button 
+            android:text="navigate_raw"
+            android:id="@+id/ButtonNavigateRaw" 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+        />
+        <Button 
+            android:text="navigate_mouse"
+            android:id="@+id/ButtonNavigateMouse" 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+        />
+        <Button 
+            android:text="navigate_discrete"
+            android:id="@+id/ButtonNavigateDiscrete" 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+        />
+        <Button 
+            android:text="quit"
+            android:id="@+id/ButtonQuit" 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+        />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView  
+        android:id="@+id/EnrollmentTextView"
+        android:layout_width="fill_parent" 
+        android:layout_height="fill_parent" 
+    android:layout_below="@+id/RelativeLayout02" android:gravity="center_vertical|center_horizontal"/>
+</RelativeLayout>
+
+    
+
+

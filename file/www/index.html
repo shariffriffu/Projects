@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text File App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        textarea {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: gray;
+            cursor: default;
+        }
+
+        #outputDiv {
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        #savedFilesDiv {
+            margin-top: 10px;
+            display: none;
+        }
+
+        .saved-file {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text File App</h1>
+    <button id="newFileButton">Create New File</button>
+    <div id="fileSection">
+        <textarea id="textInput" rows="5" cols="30"></textarea><br>
+        <input type="text" id="fileNameInput" placeholder="Enter file name">
+        <button id="saveButton">Save</button>
+    </div>
+    <button id="viewButton" disabled>View Saved Files</button>
+    <div id="savedFilesDiv">
+        <h3>Saved Files:</h3>
+        <div id="savedFilesList"></div>
+    </div>
+    <div id="outputDiv"></div>
+
+    <script src="cordova.js"></script>
+    <script>
+        document.addEventListener("deviceready", function() {
+            var newFileButton = document.getElementById("newFileButton");
+            var saveButton = document.getElementById("saveButton");
+            var viewButton = document.getElementById("viewButton");
+            var outputDiv = document.getElementById("outputDiv");
+            var textInput = document.getElementById("textInput");
+            var fileNameInput = document.getElementById("fileNameInput");
+            var savedFilesDiv = document.getElementById("savedFilesDiv");
+            var savedFilesList = document.getElementById("savedFilesList");
+
+            var maxFiles = 10;
+            var savedFiles = [];
+
+            newFileButton.addEventListener("click", function() {
+                textInput.value = "";
+                fileNameInput.value = "";
+                savedFilesDiv.style.display = "none";
+                viewButton.disabled = true;
+            });
+
+            saveButton.addEventListener("click", function() {
+                var text = textInput.value.trim();
+                var fileName = fileNameInput.value.trim();
+
+                if (text === "" || fileName === "") {
+                    return;
+                }
+
+                var fileNameWithExtension = fileName + ".html";
+                var filePath = cordova.file.dataDirectory + fileNameWithExtension;
+
+                window.resolveLocalFileSystemURL(cordova.file.dataDirectory, function(dirEntry) {
+                    dirEntry.getFile(fileNameWithExtension, { create: true, exclusive: false }, function(fileEntry) {
+                        fileEntry.createWriter(function(fileWriter) {
+                            fileWriter.onwriteend = function() {
+                                outputDiv.textContent = "File saved successfully!";
+                                viewButton.disabled = false;
+
+                                if (savedFiles.length === maxFiles) {
+                                    savedFiles.shift();
+                                }
+
+                                savedFiles.push(fileName);
+                                loadSavedFiles(); // Update saved files list
+                            };
+
+                            fileWriter.onerror = function(e) {
+                                outputDiv.textContent = "Save failed: " + e.toString();
+                                viewButton.disabled = true;
+                            };
+
+                            var htmlContent = "<html><head><title>" + fileName + "</title></head><body>" + text + "</body></html>";
+                            var blob = new Blob([htmlContent], { type: "text/html" });
+                            fileWriter.write(blob);
+                        }, onError);
+                    }, onError);
+                }, onError);
+            });
+
+            viewButton.addEventListener("click", function() {
+                savedFilesDiv.style.display = savedFilesDiv.style.display === "none" ? "block" : "none";
+            });
+
+            function loadSavedFiles() {
+                savedFilesList.innerHTML = "";
+
+                for (var i = 0; i < savedFiles.length; i++) {
+                    var fileName = savedFiles[i] + ".html";
+
+                    var listItem = document.createElement("div");
+                    listItem.className = "saved-file";
+                    listItem.textContent = fileName;
+                    savedFilesList.appendChild(listItem);
+
+                    listItem.addEventListener("click", function() {
+                        var fileName = this.textContent;
+
+                        window.resolveLocalFileSystemURL(cordova.file.dataDirectory, function(dirEntry) {
+                            dirEntry.getFile(fileName, { create: false }, function(fileEntry) {
+                                fileEntry.file(function(file) {
+                                    var reader = new FileReader();
+
+                                    reader.onloadend = function() {
+                                        outputDiv.innerHTML = this.result;
+                                    };
+
+                                    reader.readAsText(file);
+                                }, onError);
+                            }, onError);
+                        }, onError);
+                    });
+                }
+            }
+
+            function onError(err) {
+                outputDiv.textContent = "An error occurred: " + err.code;
+                viewButton.disabled = true;
+            }
+
+            loadSavedFiles();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+{
+  "name": "io.cordova.hellocordova",
+  "displayName": "HelloCordova",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "cordova-android": "^9.1.0",
+    "cordova-plugin-android-permissions": "^1.1.5",
+    "cordova-plugin-androidx": "^3.0.0",
+    "cordova-plugin-androidx-adapter": "^1.1.3",
+    "cordova-plugin-appinfo": "^2.1.2",
+    "cordova-plugin-camera": "^5.0.3",
+    "cordova-plugin-contacts": "^3.0.1",
+    "cordova-plugin-device": "^2.1.0",
+    "cordova-plugin-dialogs": "^2.0.2",
+    "cordova-plugin-file": "^6.0.2",
+    "cordova-plugin-file-transfer": "^1.7.1",
+    "cordova-plugin-geolocation": "^4.1.0",
+    "cordova-plugin-inappbrowser": "^5.0.0",
+    "cordova-plugin-ionic-keyboard": "^2.2.0",
+    "cordova-plugin-network-information": "^3.0.0",
+    "cordova-plugin-qrscanner": "^3.0.1",
+    "cordova-plugin-sim": "^1.3.3",
+    "cordova-plugin-splashscreen": "^6.0.2",
+    "cordova-plugin-statusbar": "^3.0.0",
+    "cordova-plugin-whitelist": "^1.3.5",
+    "cordova-plugin-x-socialsharing": "^6.0.4",
+    "cordova.plugins.diagnostic": "^7.1.2",
+    "es6-promise-plugin": "^4.2.2",
+    "phonegap-plugin-mobile-accessibility": "^1.0.5"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "cordova.plugins.diagnostic": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1"
+      },
+      "cordova-plugin-android-permissions": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1"
+      },
+      "cordova-plugin-androidx": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1"
+      },
+      "cordova-plugin-androidx-adapter": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1"
+      },
+      "cordova-plugin-appinfo": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1"
+      },
+      "cordova-plugin-camera": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-contacts": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-device": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-dialogs": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-file": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-file-transfer": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-geolocation": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+",
+        "GPS_REQUIRED": "true"
+      },
+      "cordova-plugin-inappbrowser": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+",
+        "GPS_REQUIRED": "true"
+      },
+      "cordova-plugin-ionic-keyboard": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+",
+        "GPS_REQUIRED": "true"
+      },
+      "cordova-plugin-network-information": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+",
+        "GPS_REQUIRED": "true"
+      },
+      "cordova-plugin-qrscanner": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+",
+        "GPS_REQUIRED": "true"
+      },
+      "cordova-plugin-sim": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+",
+        "GPS_REQUIRED": "true"
+      },
+      "cordova-plugin-splashscreen": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+",
+        "GPS_REQUIRED": "true"
+      },
+      "cordova-plugin-statusbar": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+",
+        "GPS_REQUIRED": "true"
+      },
+      "cordova-plugin-whitelist": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+",
+        "GPS_REQUIRED": "true"
+      },
+      "cordova-plugin-x-socialsharing": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+",
+        "GPS_REQUIRED": "true"
+      },
+      "es6-promise-plugin": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+",
+        "GPS_REQUIRED": "true"
+      },
+      "phonegap-plugin-mobile-accessibility": {
+        "ANDROIDX_VERSION": "1.0.0",
+        "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+",
+        "GPS_REQUIRED": "true"
+      }
+    }
+  }
+}

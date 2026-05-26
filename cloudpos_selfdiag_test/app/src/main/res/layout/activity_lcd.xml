@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue1"
+    android:orientation="vertical"
+    android:textColor="#000000"
+    tools:context=".LCD">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:text="LCD Test"
+            android:textColor="#FFF"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/default_lcd"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Default"
+            android:textColor="@color/colorAccent"></Button>
+
+        <Button
+            android:id="@+id/color"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/default_lcd"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Colors Test"
+            android:textColor="@color/colorAccent"></Button>
+
+        <Button
+            android:id="@+id/multImages"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/color"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Multiple Images"
+            android:textColor="@color/colorAccent"></Button>
+
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/multImages"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:layout_alignTop="@id/default_lcd"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/default_lcd" />
+
+
+        <SeekBar
+            android:id="@+id/seekBar1"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/imageView1"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:max="10" />
+
+        <TextView
+            android:id="@+id/brightness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/title"
+            android:layout_alignBottom="@+id/seekBar1"
+            android:layout_gravity="center"
+            android:text="BRIGHTNESS"
+            android:textColor="#FFF"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

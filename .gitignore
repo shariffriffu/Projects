@@ -1,0 +1,36 @@
+﻿# Master .gitignore for D:\Projects monorepo
+
+# Node / JavaScript
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Flutter / Dart
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.packages
+**/.pub-cache/
+**/.pub/
+**/build/
+**/ios/Flutter/.last_build_id
+
+# Java / Gradle / Maven
+**/.gradle/
+**/target/
+**/*.class
+**/*.jar
+**/*.war
+
+# System & Caches
+**/Thumbs.db
+**/.DS_Store
+**/*.log
+
+# IDEs
+**/.idea/
+**/*.iml
+**/*.ipr
+**/*.iws
+**/.vscode/

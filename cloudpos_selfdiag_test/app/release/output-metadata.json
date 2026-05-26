@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.visiontek.cloudpos.selfdiag",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "properties": [],
+      "versionCode": 122,
+      "versionName": "1.2",
+      "enabled": true,
+      "outputFile": "SelfDiag_Cloudpos_V1.2.apk"
+    }
+  ]
+}

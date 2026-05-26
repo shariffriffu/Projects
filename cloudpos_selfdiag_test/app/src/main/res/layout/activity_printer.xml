@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#00B0B0"
+    tools:context=".Printer">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginVertical="50dp">
+
+   <Button
+            android:id="@+id/printBarcode"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dip"
+            android:text="printBarcode"
+            android:textColor="@color/colorAccent"></Button>
+
+    <Button
+            android:id="@+id/bmp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dip"
+            android:textColor="@color/colorAccent"
+            android:text="printBMP" >
+        </Button>
+        <Button
+            android:id="@+id/printText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dip"
+            android:textColor="@color/colorAccent"
+            android:text="printText" >
+        </Button>
+     <Button
+            android:id="@+id/Html"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dip"
+            android:textColor="@color/colorAccent"
+            android:text="printHTML" >
+        </Button>
+
+        <Button
+            android:id="@+id/Count"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dip"
+            android:textColor="@color/colorAccent"
+            android:text="printCount" >
+        </Button>
+      <!--  <Button
+            android:id="@+id/Image"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dip"
+            android:textColor="@color/colorAccent"
+            android:text="printImage" >
+        </Button> -->
+
+      <!--<androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView2"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:layout_alignTop="@id/default_lcd"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/default_lcd" /> -->
+
+    </LinearLayout>
+
+</LinearLayout>
+

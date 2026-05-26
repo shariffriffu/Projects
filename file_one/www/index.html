@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        canvas {
+            border: 1px solid #000000;
+            background-color: #ffffff;
+            display: block;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+        .score {
+            font-size: 24px;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #ffffff;
+            display: inline-block;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-over {
+            font-size: 24px;
+            margin-top: 30px;
+        }
+
+        .restart-button {
+            font-size: 16px;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #0095DD;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .restart-button:hover {
+            background-color: #0077BB;
+        }
+
+        .settings-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            padding: 4px 8px;
+            background-color: transparent;
+            color: #0095DD;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .settings-button:hover {
+            color: #0077BB;
+        }
+
+        .settings-menu {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 180px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        .settings-menu.open {
+            display: block;
+        }
+
+        .settings-menu-item {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .settings-menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .settings-menu-item:hover {
+            background-color: #f4f4f4;
+        }
+
+        .selected {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Game</h1>
+    <canvas id="gameCanvas" width="400" height="300"></canvas>
+    <div class="score">Score: <span id="scoreValue">0</span></div>
+    <div id="gameOverText" class="game-over"></div>
+    <button id="restartButton" class="restart-button" style="display: none;">Restart</button>
+    <button id="settingsButton" class="settings-button">&#9776;</button>
+    <div id="settingsMenu" class="settings-menu">
+        <div id="easyButton" class="settings-menu-item">Easy</div>
+        <div id="mediumButton" class="settings-menu-item selected">Medium</div>
+        <div id="highButton" class="settings-menu-item">High</div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const paddleHeight = 10;
+        const paddleWidth = 75;
+        let paddleX = (canvas.width - paddleWidth) / 2;
+        let rightPressed = false;
+        let leftPressed = false;
+        let touchX = null;
+
+        let x = canvas.width / 2;
+        let y = canvas.height - 30;
+        let dx = 2;
+        let dy = -2;
+        const ballRadius = 10;
+
+        let score = 0;
+        const scoreValue = document.getElementById('scoreValue');
+        const gameOverText = document.getElementById('gameOverText');
+        const restartButton = document.getElementById('restartButton');
+        const settingsButton = document.getElementById('settingsButton');
+        const settingsMenu = document.getElementById('settingsMenu');
+        const levelButtons = document.querySelectorAll('.settings-menu-item');
+
+        let speed = 4; // Initial ball speed
+
+        function drawPaddle() {
+            ctx.beginPath();
+            ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+            ctx.fillStyle = '#0077BB';
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function drawBall() {
+            ctx.beginPath();
+            ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
+            ctx.fillStyle = '#FF6F61';
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function drawScore() {
+            scoreValue.textContent = score;
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawBall();
+            drawPaddle();
+            drawScore();
+
+            x += dx * speed;
+            y += dy * speed;
+
+            if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+                dx = -dx;
+            }
+            if (y + dy < ballRadius) {
+                dy = -dy;
+            } else if (y + dy > canvas.height - ballRadius) {
+                if (x > paddleX && x < paddleX + paddleWidth) {
+                    dy = -dy;
+                    score++;
+                } else {
+                    gameOverText.textContent = 'Game Over. Final Score: ' + score;
+                    gameOverText.style.display = 'block';
+                    restartButton.style.display = 'block';
+                    return;
+                }
+            }
+
+            if (rightPressed && paddleX < canvas.width - paddleWidth) {
+                paddleX += 7;
+            } else if (leftPressed && paddleX > 0) {
+                paddleX -= 7;
+            } else if (touchX && touchX >= 0 && touchX <= canvas.width) {
+                paddleX = touchX - paddleWidth / 2;
+            }
+
+            requestAnimationFrame(draw);
+        }
+
+        function resetGame() {
+            gameOverText.style.display = 'none';
+            restartButton.style.display = 'none';
+            score = 0;
+            x = canvas.width / 2;
+            y = canvas.height - 30;
+            paddleX = (canvas.width - paddleWidth) / 2;
+            draw();
+        }
+
+        function setBallSpeed(level) {
+            levelButtons.forEach((button) => button.classList.remove('selected'));
+            level.classList.add('selected');
+
+            if (level.id === 'easyButton') {
+                speed = 2;
+            } else if (level.id === 'mediumButton') {
+                speed = 4;
+            } else if (level.id === 'highButton') {
+                speed = 6;
+            }
+        }
+
+        function toggleSettingsMenu() {
+            settingsMenu.classList.toggle('open');
+        }
+
+        levelButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setBallSpeed(button);
+            });
+        });
+
+        settingsButton.addEventListener('click', toggleSettingsMenu);
+        restartButton.addEventListener('click', resetGame);
+
+        function keyDownHandler(e) {
+            if (e.key === 'Right' || e.key === 'ArrowRight') {
+                rightPressed = true;
+            } else if (e.key === 'Left' || e.key === 'ArrowLeft') {
+                leftPressed = true;
+            }
+        }
+
+        function keyUpHandler(e) {
+            if (e.key === 'Right' || e.key === 'ArrowRight') {
+                rightPressed = false;
+            } else if (e.key === 'Left' || e.key === 'ArrowLeft') {
+                leftPressed = false;
+            }
+        }
+
+        function touchMoveHandler(e) {
+            const rect = canvas.getBoundingClientRect();
+            touchX = e.touches[0].clientX - rect.left;
+        }
+
+        function touchEndHandler() {
+            touchX = null;
+        }
+
+        document.addEventListener('keydown', keyDownHandler);
+        document.addEventListener('keyup', keyUpHandler);
+        canvas.addEventListener('touchmove', touchMoveHandler);
+        canvas.addEventListener('touchend', touchEndHandler);
+
+        draw();
+    </script>
+</body>
+</html>

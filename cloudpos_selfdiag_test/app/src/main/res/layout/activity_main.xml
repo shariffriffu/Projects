@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+   <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginVertical="20dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="0dp">
+
+                   <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/main_btn_audio"
+                            style="@style/Home"
+                            android:drawableTop="@drawable/i_audio"
+                            android:onClick="onButtonClick"
+                            android:text="Audio" />
+                        <Button
+                            android:id="@+id/main_btn_bluetooth"
+                            style="@style/Home"
+                            android:drawableTop="@drawable/i_bt"
+                            android:onClick="onButtonClick"
+                            android:paddingTop="20dp"
+                            android:text="bluetooth " />
+                        <Button
+                            android:id="@+id/main_btn_fp"
+                            style="@style/Home"
+                            android:drawableTop="@drawable/i_fps"
+                            android:onClick="onButtonClick"
+                            android:paddingTop="20dp"
+                            android:text="CapacitiveFP" />
+                        <Button
+                            android:id="@+id/main_btn_gps"
+                            style="@style/Home"
+                            android:drawableTop="@drawable/i_gps"
+                            android:onClick="onButtonClick"
+                            android:paddingTop="20dp"
+                            android:text="gps" />
+                        <Button
+                            android:id="@+id/main_btn_info"
+                            style="@style/Home"
+                            android:drawableTop="@drawable/i_info"
+                            android:onClick="onButtonClick"
+                            android:paddingTop="20dp"
+                            android:text="info" />
+                        <Button
+                            android:id="@+id/main_btn_msr"
+                            style="@style/Home"
+                            android:drawableTop="@drawable/magswipe_1"
+                            android:onClick="onButtonClick"
+                            android:paddingTop="20dp"
+                            android:text="MSR" />
+                        <Button
+                            android:id="@+id/main_btn_rfid"
+                            style="@style/Home"
+                            android:drawableTop="@drawable/i_rfid"
+                            android:onClick="onButtonClick"
+                            android:paddingTop="20dp"
+                            android:text="RFID" />
+                        <Button
+                            android:id="@+id/main_btn_usb"
+                            style="@style/Home"
+                            android:drawableTop="@drawable/i_usb"
+                            android:onClick="onButtonClick"
+                            android:paddingTop="20dp"
+                            android:text="USB" />
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="0dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <Button
+                            android:id="@+id/main_btn_battery"
+                            style="@style/Home"
+                            android:drawableTop="@drawable/i_battery"
+                            android:onClick="onButtonClick"
+                            android:text="Battery" />
+                        <Button
+                            android:id="@+id/main_btn_camera"
+                            style="@style/Home"
+                            android:drawableTop="@drawable/i_cam"
+                            android:onClick="onButtonClick"
+                            android:paddingTop="20dp"
+                            android:text="Camera" />
+                        <Button
+                            android:id="@+id/main_btn_gprs"
+                            style="@style/Home"
+                            android:drawableTop="@drawable/i_gprs"
+                            android:onClick="onButtonClick"
+                            android:paddingTop="20dp"
+                            android:text="gprs" />
+                        <Button
+                            android:id="@+id/main_btn_ifd"
+                            style="@style/Home"
+                            android:drawableTop="@drawable/i_ifd"
+                            android:onClick="onButtonClick"
+                            android:paddingTop="20dp"
+                            android:text="IFD" />
+                        <Button
+                            android:id="@+id/main_btn_lcd"
+                            style="@style/Home"
+                            android:drawableTop="@drawable/i_lcd"
+                            android:onClick="onButtonClick"
+                            android:paddingTop="20dp"
+                            android:text="LCD" />
+                        <Button
+                            android:id="@+id/main_btn_printer"
+                            style="@style/Home"
+                            android:drawableTop="@drawable/printer"
+                            android:onClick="onButtonClick"
+                            android:paddingTop="20dp"
+                            android:text="Printer" />
+                        <Button
+                            style="@style/Home"
+                            android:id="@+id/main_btn_sdcard"
+                            android:drawableTop="@drawable/i_sdcard"
+                            android:onClick="onButtonClick"
+                            android:paddingTop="20dp"
+                            android:text="sdcard" />
+                        <Button
+                            android:id="@+id/main_btn_wifi"
+                            style="@style/Home"
+                            android:drawableTop="@drawable/i_wifi"
+                            android:onClick="onButtonClick"
+                            android:paddingTop="20dp"
+                            android:text="wifi" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

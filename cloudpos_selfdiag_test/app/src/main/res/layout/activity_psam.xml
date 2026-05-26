@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#00B0B0"
+    tools:context=".PSAM">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="50dp"
+    android:layout_marginVertical="50dp">
+    <Button
+        android:id="@+id/cardPresence"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dip"
+        android:textColor="@color/colorAccent"
+        android:text="Card Presence" >
+    </Button>
+    <Button
+        android:id="@+id/connect"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dip"
+        android:textColor="@color/colorAccent"
+        android:text="Connect" >
+    </Button>
+    <Button
+        android:id="@+id/write"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dip"
+        android:textColor="@color/colorAccent"
+        android:text="Write" >
+    </Button>
+    <Button
+        android:id="@+id/read"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/writeButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dip"
+        android:textColor="@color/colorAccent"
+        android:text="Read" >
+    </Button>
+    <Button
+        android:id="@+id/noOfRecords"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/readButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dip"
+        android:textColor="@color/colorAccent"
+        android:text="No. Of Records" >
+    </Button>
+
+    <Button
+        android:id="@+id/format"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/numButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dip"
+        android:textColor="@color/colorAccent"
+        android:text="Format" >
+    </Button>
+</LinearLayout>
+</LinearLayout>
