@@ -510,7 +510,7 @@ class _WaxSealEnvelopeState extends State<WaxSealEnvelope> with TickerProviderSt
                           border: Border.all(color: const Color(0xFFB71C1C), width: 2),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.red.shade900.withOpacity(0.4),
+                              color: Colors.red.shade900.withValues(alpha: 0.4),
                               blurRadius: 8,
                               spreadRadius: 2,
                             ),
